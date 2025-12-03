@@ -1,0 +1,47 @@
+.appHeader {
+  @include flex-center(space-between, center);
+  padding: $size-l;
+  background: $border-color;
+  border-bottom: 1px solid $border-color;
+
+  border-bottom-left-radius: $size-2xl;
+  border-bottom-right-radius: $size-2xl;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  .logoImage {
+    width: 50px;
+  }
+
+  // HAMBURGER (mobile default)
+  .hamburgerBtn {
+    display: block;
+    font-size: 1.4rem;
+  }
+
+  // Desktop actions (mobile: hidden)
+  .headerActionsDesktop {
+    display: none;
+  }
+
+  // DESKTOP STYLES
+  @include desktop {
+    .hamburgerBtn {
+      display: none; // hide on desktop
+    }
+
+    .logoImage {
+      width: 100px;
+    }
+
+    .headerActionsDesktop {
+      @include flex-center(center, center, $size-md);
+    }
+  }
+}
+
+.buttonMobile {
+  margin-top: $size-l;
+}

@@ -1,0 +1,17 @@
+@use "./variables" as *;
+
+@mixin flex-center($justify: center, $align: center, $gap: null) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+
+  @if $gap != null {
+    gap: $gap;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $break-desktop) {
+    @content;
+  }
+}

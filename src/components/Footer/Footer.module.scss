@@ -1,0 +1,29 @@
+.footer {
+  max-width: $max-width;
+  width: 100%;
+
+  padding: $size-sm 0;
+  text-align: center;
+  background-color: $border-color;
+  color: $gray-color;
+  margin-top: $size-2xl;
+
+  border-top-left-radius: $size-2xl;
+  border-top-right-radius: $size-2xl;
+}
+
+
+.text {
+  font-size: $size-sm;
+
+  a {
+    font-weight: 600;
+    color: $gray-color;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $light-green;
+    }
+  }
+}

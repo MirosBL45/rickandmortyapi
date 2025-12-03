@@ -1,0 +1,21 @@
+/* Svi Ant Design stilovi idu globalno */
+:global(.ant-modal) {
+  border-radius: $size-xs;
+
+  :global(.ant-modal-content) {
+    padding: $size-l;
+  }
+
+  :global(.ant-form-item-label) {
+    font-weight: 600;
+  }
+
+  :global(.ant-input),
+  :global(.ant-select-selector) {
+    border-radius: $size-xs !important;
+  }
+
+  :global(button[type="submit"]) {
+    margin-top: $size-xl;
+  }
+}

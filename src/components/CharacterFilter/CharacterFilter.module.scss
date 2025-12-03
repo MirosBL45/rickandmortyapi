@@ -1,0 +1,26 @@
+.characterFilters {
+  display: flex;
+  flex-direction: column;
+  gap: $size-sm;
+  margin: $size-sm 0;
+
+  /* input je lokalni element, ant-select je globalna klasa */
+  input,
+  :global(.ant-select) {
+    width: 100%;
+  }
+
+  @media (min-width: $break-desktop) {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: $size-md;
+
+    input,
+    :global(.ant-select) {
+      flex: 1 1 150px;
+      min-width: 120px;
+      width: auto;
+    }
+  }
+}

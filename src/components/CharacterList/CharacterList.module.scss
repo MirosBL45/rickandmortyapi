@@ -1,0 +1,16 @@
+.characterListSection {
+    text-align: center;
+}
+
+.characterListGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 200px);
+    gap: $size-l;
+    justify-content: center;
+    margin-bottom: $size-l;
+}
+
+.paginationPart {
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,67 @@
+.customCardWrapper {
+  position: relative;
+}
+
+.customCard {
+  transition: transform 0.2s ease;
+}
+
+.customCard:hover {
+  transform: translateY(-4px);
+}
+
+.favoriteActions {
+  position: absolute;
+  top: $size-xs;
+  right: $size-xs;
+  display: none;
+  flex-direction: column;
+  gap: $size-xs;
+
+  button {
+    border: none;
+    color: $white;
+    font-size: $size-md;
+    width: $size-xl;
+    height: $size-xl;
+    border-radius: $size-xs;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    opacity: 0.9;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .editBtn {
+    background: $blue;
+  }
+
+  .removeBtn {
+    background: $red;
+  }
+}
+
+/* Hover prikaz na desktopu */
+@media (min-width: $break-desktop) {
+  .customCardWrapper.favorite:hover .favoriteActions {
+    display: flex;
+  }
+}
+
+/* Uvek prikaz na mobilnom */
+@media (max-width: $break-mobile) {
+  .favoriteActions {
+    display: flex !important;
+    flex-direction: row;
+    top: $size-xs;
+    right: $size-xs;
+
+    button {
+      width: $size-xl;
+      height: $size-xl;
+      font-size: $size-md;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.formSection {
+  max-width: 600px;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // padding: $size-l;
+  flex-direction: column;
+  gap: $size-2xl;
+
+  .logoImage {
+    width: 150px;
+  }
+}

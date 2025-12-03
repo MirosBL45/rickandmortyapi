@@ -1,0 +1,28 @@
+.favoritesPage {
+  padding: $size-l;
+
+  h1 {
+    margin-bottom: $size-l;
+    text-align: center;
+  }
+
+  .favoritesGrid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $size-md;
+    justify-content: center;
+
+    .ant-card {
+      flex: 1 1 150px;
+      min-width: 120px;
+      max-width: 200px;
+      position: relative;
+    }
+  }
+
+  p {
+    text-align: center;
+    font-style: italic;
+    color: $gray-color;
+  }
+}
