@@ -1,5 +1,6 @@
 import { makeAutoObservable, runInAction } from 'mobx';
 import axios from 'axios';
+import debounce from 'lodash.debounce'; // added before - after
 
 export interface Character {
     id: number;
@@ -32,10 +33,13 @@ class CharacterStore {
 
     // Edit Modal
     editCharacterId: number | null = null;
+    debouncedFetch: () => void; // added before - after
 
     constructor() {
         makeAutoObservable(this);
         this.loadFavorites();
+        this.debouncedFetch = debounce(this.fetchCharacters.bind(this), 500); // added before - after
+
     }
 
     // Set filters
@@ -46,7 +50,8 @@ class CharacterStore {
         if (filter.gender !== undefined) this.gender = filter.gender || '';
 
         this.page = 1;
-        this.fetchCharacters();
+        // this.fetchCharacters();
+        this.debouncedFetch(); // added before - after
     }
 
     setPage(page: number) {

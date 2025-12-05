@@ -12,7 +12,7 @@ const CharacterFilter = observer(() => {
   // Debounce za "name" i "species"
   const debouncedSetFilter = debounce((filterObj: any) => {
     store.setFilter(filterObj);
-  }, 45);
+  }, 500);
 
   useEffect(() => {
     return () => debouncedSetFilter.cancel();
@@ -33,7 +33,8 @@ const CharacterFilter = observer(() => {
         <Input
           placeholder="Search by name..."
           value={store.search}
-          onChange={(e) => handleFilterChange("name", e.target.value)}
+          // onChange={(e) => handleFilterChange("name", e.target.value)}
+          onChange={(e) => store.setFilter({name: e.target.value})} // added before - after
           allowClear
           onClear={() => handleFilterChange("name", "")}
         />
@@ -44,7 +45,8 @@ const CharacterFilter = observer(() => {
         <Input
           placeholder="Species..."
           value={store.species}
-          onChange={(e) => handleFilterChange("species", e.target.value)}
+          // onChange={(e) => handleFilterChange("species", e.target.value)}
+          onChange={(e) => store.setFilter({species: e.target.value})} // added before - after
           allowClear
           onClear={() => handleFilterChange("species", "")}
         />
@@ -55,7 +57,8 @@ const CharacterFilter = observer(() => {
         <Select
           placeholder="Status"
           value={store.status || undefined}
-          onChange={(value) => handleFilterChange("status", value)}
+          // onChange={(value) => handleFilterChange("status", value)}
+          onChange={(value) => store.setFilter({ status: value || "" })} // added before - after
           allowClear
           onClear={() => handleFilterChange("status", "")}
           options={[
@@ -71,7 +74,8 @@ const CharacterFilter = observer(() => {
         <Select
           placeholder="Gender"
           value={store.gender || undefined}
-          onChange={(value) => handleFilterChange("gender", value)}
+          // onChange={(value) => handleFilterChange("gender", value)}
+          onChange={(value) => store.setFilter({ gender: value || "" })} // added before - after
           allowClear
           onClear={() => handleFilterChange("gender", "")}
           options={[
