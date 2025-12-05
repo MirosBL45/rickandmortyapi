@@ -5,6 +5,10 @@ import { useEffect } from "react";
 import debounce from "lodash.debounce";
 
 import styles from "./CharacterFilter.module.scss";
+import { LIFE_STATUS_OPTIONS } from "../../module/characters/characters.constants";
+
+
+// Todo: move stuff to modules/<file>
 
 const CharacterFilter = observer(() => {
   const store = useCharacterStore();
@@ -58,11 +62,7 @@ const CharacterFilter = observer(() => {
           onChange={(value) => handleFilterChange("status", value)}
           allowClear
           onClear={() => handleFilterChange("status", "")}
-          options={[
-            { value: "alive", label: "Alive" },
-            { value: "dead", label: "Dead" },
-            { value: "unknown", label: "Unknown" },
-          ]}
+          options={LIFE_STATUS_OPTIONS}
         />
       </div>
 

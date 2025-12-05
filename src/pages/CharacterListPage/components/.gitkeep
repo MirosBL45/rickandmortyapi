@@ -1,0 +1,1 @@
+Components here are used only in their parent folder pages. If a component starts to get used on more than one page, then we move them to src/components 
