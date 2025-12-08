@@ -1,7 +1,7 @@
 import { Card } from "antd";
 import { observer } from "mobx-react-lite";
-import { type Character } from "../../store/CharacterStore";
-import { useCharacterStore } from "../../context/CharacterContext";
+import { type Character } from "../../module/characters/characters.store";
+import { useCharacterStore } from "../../module/characters/character.context";
 import styles from './CharacterCard.module.scss';
 
 const { Meta } = Card;

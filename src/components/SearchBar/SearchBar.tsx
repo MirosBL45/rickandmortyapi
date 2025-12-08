@@ -1,6 +1,6 @@
 import { Input } from 'antd';
 import { observer } from 'mobx-react-lite';
-import { useCharacterStore } from '../../context/CharacterContext';
+import { useCharacterStore } from "../../module/characters/character.context";
 import debounce from 'lodash.debounce';
 import { useCallback } from 'react';
 

@@ -1,7 +1,7 @@
 import type { FormProps } from "antd";
 import { Button, Form, Input, message } from "antd";
 import { useNavigate } from "react-router-dom";
-import { VALID_USER } from "../../utils/ValidUser";
+import { VALID_USER } from "../../auth/auth.mocks";
 import styles from './LoginPage.module.scss';
 
 type FieldType = {

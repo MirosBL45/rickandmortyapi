@@ -1,6 +1,6 @@
 import { Modal, Button } from "antd";
 import { observer } from "mobx-react-lite";
-import { useCharacterStore } from "../../context/CharacterContext";
+import { useCharacterStore } from "../../module/characters/character.context";
 
 import styles from './CharacterModal.module.scss';
 

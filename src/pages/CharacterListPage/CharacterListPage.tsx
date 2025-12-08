@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { observer } from "mobx-react-lite";
 
 import styles from "./CharacterListPage.module.scss";
-import { characterStore } from "../../store/CharacterStore";
+import { characterStore } from "../../module/characters/characters.store";
 
 const CharacterList = lazy(
   () => import("../../components/CharacterList/CharacterList")

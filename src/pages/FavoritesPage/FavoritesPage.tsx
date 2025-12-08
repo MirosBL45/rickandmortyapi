@@ -1,5 +1,5 @@
 import { observer } from "mobx-react-lite";
-import { useCharacterStore } from "../../context/CharacterContext";
+import { useCharacterStore } from "../../module/characters/character.context";
 import CharacterCard from "../../components/CharacterCard/CharacterCard";
 import EditCharacterModal from "../../components/EditCharacterModal/EditCharacterModal";
 

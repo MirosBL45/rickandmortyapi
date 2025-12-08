@@ -1,6 +1,6 @@
 import { Modal, Form, Input, Select, Button } from "antd";
 import { observer } from "mobx-react-lite";
-import { useCharacterStore } from "../../context/CharacterContext";
+import { useCharacterStore } from "../../module/characters/character.context";
 import { useEffect } from "react";
 
 import './EditCharacterModal.module.scss';

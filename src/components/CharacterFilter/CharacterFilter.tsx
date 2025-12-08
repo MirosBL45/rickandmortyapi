@@ -1,6 +1,6 @@
 import { Input, Select } from "antd";
 import { observer } from "mobx-react-lite";
-import { useCharacterStore } from "../../context/CharacterContext";
+import { useCharacterStore } from "../../module/characters/character.context";
 import { useEffect } from "react";
 import debounce from "lodash.debounce";
 
@@ -32,7 +32,7 @@ const CharacterFilter = observer(() => {
       <div>
         <Input
           placeholder="Search by name..."
-          value={store.search}
+          value={store.name}
           // onChange={(e) => handleFilterChange("name", e.target.value)}
           onChange={(e) => store.setFilter({name: e.target.value})} // added before - after
           allowClear

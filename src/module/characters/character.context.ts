@@ -1,5 +1,6 @@
 import { createContext, useContext } from "react";
-import { characterStore } from "../store/CharacterStore";
+import { characterStore } from './characters.store'
+
 
 export const CharacterContext = createContext(characterStore);
 
