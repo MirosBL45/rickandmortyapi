@@ -16,7 +16,7 @@ const FavoritesPage = observer(() => {
         <p>You have no favorite characters yet.</p>
       ) : (
         <div className={styles.favoritesGrid}>
-          {store.favorites.map((character) => (
+          {store.favorites.slice().reverse().map((character) => (
             <CharacterCard
               key={character.id}
               character={character}

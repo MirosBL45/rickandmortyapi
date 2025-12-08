@@ -1,8 +1,15 @@
 import { makeAutoObservable, runInAction } from "mobx";
-import axios from "axios";
 import debounce from "lodash.debounce"; // added before - after
 
-import type { ICharacter, ICharacterFilters } from "./characters.types";
+import type {
+  ICharacter,
+  ICharacterFilters,
+  IUpdateCharacter,
+} from "./characters.types";
+
+import { charactersService } from "./characters.service";
+
+import to from "await-to-js";
 
 class CharacterStore {
   characters: ICharacter[] = [];
@@ -12,11 +19,6 @@ class CharacterStore {
   total = 0;
   pageSize = 20;
 
-  // Filters
-  // name = '';
-  // status = '';
-  // species = '';
-  // gender = '';
   filters: ICharacterFilters = {
     name: "",
     status: "",
@@ -41,10 +43,10 @@ class CharacterStore {
 
   // Set filters
   setFilter(filter: Partial<ICharacterFilters>) {
-    this.filters = {
+    this.filters = charactersService.parseFilters({
       ...this.filters,
       ...filter,
-    };
+    });
 
     this.page = 1;
     // this.fetchCharacters();
@@ -70,35 +72,23 @@ class CharacterStore {
     this.loading = true;
     this.error = "";
 
-    try {
-      const response = await axios.get(
-        "https://rickandmortyapi.com/api/character",
-        {
-          params: {
-            page: this.page,
-            name: this.filters.name || undefined,
-            status: this.filters.status || undefined,
-            species: this.filters.species || undefined,
-            gender: this.filters.gender || undefined,
-          },
-        }
-      );
+    const [err, response] = await to(
+      charactersService.getCharacters(this.filters, this.page, this.pageSize)
+    );
 
-      runInAction(() => {
-        this.characters = response.data.results;
-        this.total = response.data.info.count;
-      });
-    } catch (err: any) {
-      runInAction(() => {
+    runInAction(() => {
+      if (err) {
         this.error = "Not found";
         this.characters = [];
         this.total = 0;
-      });
-    } finally {
-      runInAction(() => {
         this.loading = false;
-      });
-    }
+        return;
+      }
+
+      this.characters = response.data.results;
+      this.total = response.data.info.count;
+      this.loading = false;
+    });
   }
 
   // --- FAVORITES ---
@@ -143,13 +133,7 @@ class CharacterStore {
   }
 
   // Čuva izmene
-  updateFavorite(updated: {
-    id: number;
-    name: string;
-    species: string;
-    status: string;
-    gender: string;
-  }) {
+  updateFavorite(updated: IUpdateCharacter) {
     this.favorites = this.favorites.map((fav) =>
       fav.id === updated.id ? { ...fav, ...updated } : fav
     );

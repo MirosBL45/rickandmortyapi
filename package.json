@@ -12,6 +12,7 @@
   "dependencies": {
     "@ant-design/icons": "~6.1.0",
     "antd": "^6.0.0",
+    "await-to-js": "^3.0.0",
     "axios": "^1.13.2",
     "lodash": "^4.17.21",
     "lodash.debounce": "^4.0.8",

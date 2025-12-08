@@ -16,3 +16,11 @@ export interface ICharacterFilters {
   species: string;
   gender: string;
 }
+
+export interface IUpdateCharacter {
+  id: number;
+  name: string;
+  species: string;
+  status: string;
+  gender: string;
+}
