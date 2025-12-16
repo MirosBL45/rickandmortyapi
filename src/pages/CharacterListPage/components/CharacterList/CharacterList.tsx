@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite";
 import { Pagination, Spin } from "antd";
-import CharacterCard from "../CharacterCard/CharacterCard";
-import { useCharacterStore } from "../../module/characters/character.context";
+import CharacterCard from "@/components/CharacterCard/CharacterCard";
+import { useCharacterStore } from "@/module/characters/character.context";
 
 import styles from './CharacterList.module.scss';
 

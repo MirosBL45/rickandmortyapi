@@ -1,13 +1,13 @@
 import { Card } from "antd";
 import { observer } from "mobx-react-lite";
-import { type Character } from "../../module/characters/characters.store";
-import { useCharacterStore } from "../../module/characters/character.context";
+import { type ICharacter } from "@/module/characters/characters.types";
+import { useCharacterStore } from "@/module/characters/character.context";
 import styles from './CharacterCard.module.scss';
 
 const { Meta } = Card;
 
 type Props = {
-  character: Character;
+  character: ICharacter;
   isFavoriteCard?: boolean;
   onRemove?: (id: number) => void;
 };

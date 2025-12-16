@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import LoginForm from "./comonents/LoginForm/LoginForm";
+import LoginForm from "./components/LoginForm/LoginForm";
 import styles from "./LoginPage.module.scss";
-import Clock from "./comonents/Clock/Clock";
+import Clock from "./components/Clock/Clock";
 
 export default function LoginPage() {
   const navigate = useNavigate();

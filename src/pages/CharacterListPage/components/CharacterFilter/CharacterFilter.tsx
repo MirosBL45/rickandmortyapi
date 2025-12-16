@@ -1,16 +1,16 @@
 import { Input, Select } from "antd";
 import { observer } from "mobx-react-lite";
-import { useCharacterStore } from "../../module/characters/character.context";
+import { useCharacterStore } from "@/module/characters/character.context";
 import { useEffect } from "react";
 import debounce from "lodash.debounce";
 
 import {
   LIFE_STATUS_OPTIONS,
   GENDER_STATUS_OPTIONS,
-} from "../../module/characters/characters.constants";
+} from "@/module/characters/characters.constants";
 
 import styles from "./CharacterFilter.module.scss";
-import type { ICharacterFilters } from "../../module/characters/characters.types";
+import type { ICharacterFilters } from "@/module/characters/characters.types";
 
 const CharacterFilter = observer(() => {
   const store = useCharacterStore();
