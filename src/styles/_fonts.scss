@@ -1,3 +1,13 @@
+/* Poppins Regular */
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/font/poppins/Poppins-Regular.woff2') format('woff2'),
+       url('../assets/font/poppins/Poppins-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Poppins Medium */
 @font-face {
   font-family: 'Poppins';
@@ -8,12 +18,42 @@
   font-display: swap;
 }
 
+/* Poppins Bold */
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/font/poppins/Poppins-Bold.woff2') format('woff2'),
+       url('../assets/font/poppins/Poppins-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Lexend Regular */
+@font-face {
+  font-family: 'Lexend';
+  src: url('../assets/font/lexend/Lexend-Regular.woff2') format('woff2'),
+       url('../assets/font/lexend/Lexend-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Lexend Medium */
 @font-face {
   font-family: 'Lexend';
   src: url('../assets/font/lexend/Lexend-Medium.woff2') format('woff2'),
        url('../assets/font/lexend/Lexend-Medium.woff') format('woff');
   font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Lexend Bold */
+@font-face {
+  font-family: 'Lexend';
+  src: url('../assets/font/lexend/Lexend-Bold.woff2') format('woff2'),
+       url('../assets/font/lexend/Lexend-Bold.woff') format('woff');
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
