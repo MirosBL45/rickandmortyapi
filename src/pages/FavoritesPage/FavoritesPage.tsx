@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite";
 import { useCharacterStore } from "../../module/characters/character.context";
 import CharacterCard from "../../components/CharacterCard/CharacterCard";
-import EditCharacterModal from "../../components/EditCharacterModal/EditCharacterModal";
+import EditCharacterModal from "./components/EditCharacterModal/EditCharacterModal";
 
 import styles from './FavoritesPage.module.scss';
 
